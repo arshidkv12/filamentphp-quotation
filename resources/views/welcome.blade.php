@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{url('css/tailwind.css')}}" rel="stylesheet">
+    @vite('resources/css/app.css')
 
     <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,55 +45,8 @@
         </button>
       </div>
 
-      <form class="hidden h-9 w-2/5 items-center border md:flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="mx-3 h-4 w-4"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-          />
-        </svg>
-
-        <input
-          class="hidden w-11/12 outline-none md:block"
-          type="search"
-          placeholder="Search"
-        />
-
-        <button class="ml-auto h-full bg-amber-400 px-4 hover:bg-yellow-300">
-          Search
-        </button>
-      </form>
-
       <div class="hidden gap-3 md:!flex">
-        <a
-          href="wishlist.html"
-          class="flex cursor-pointer flex-col items-center justify-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-            />
-          </svg>
-
-          <p class="text-xs">Wishlist</p>
-        </a>
+         
 
         <a
           href="cart.html"
@@ -115,36 +68,7 @@
           <p class="text-xs">Cart</p>
         </a>
 
-        <a
-          href="account-page.html"
-          class="relative flex cursor-pointer flex-col items-center justify-center"
-        >
-          <span class="absolute bottom-[33px] right-1 flex h-2 w-2">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-red-500"
-            ></span>
-          </span>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-            />
-          </svg>
-
-          <p class="text-xs">Account</p>
-        </a>
       </div>
     </header>
     <!-- /Header -->
@@ -158,27 +82,7 @@
     >
       <div class="mx-auto">
         <div class="mx-auto flex w-full justify-center gap-3 py-4">
-          <a
-            href="wishlist.html"
-            class="flex cursor-pointer flex-col items-center justify-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-              />
-            </svg>
-
-            <p class="text-xs">Wishlist</p>
-          </a>
+         
 
           <a
             href="cart.html"
@@ -198,37 +102,6 @@
             </svg>
 
             <p class="text-xs">Cart</p>
-          </a>
-
-          <a
-            href="account-page.html"
-            class="relative flex cursor-pointer flex-col items-center justify-center"
-          >
-            <span class="absolute bottom-[33px] right-1 flex h-2 w-2">
-              <span
-                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex h-2 w-2 rounded-full bg-red-500"
-              ></span>
-            </span>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
-
-            <p class="text-xs">Account</p>
           </a>
         </div>
 
@@ -278,33 +151,11 @@
       <div
         class="mx-auto hidden h-12 w-full max-w-[1200px] items-center md:flex"
       >
-        <button
-          @click="desktopMenuOpen = ! desktopMenuOpen"
-          class="ml-5 flex h-full w-40 cursor-pointer items-center justify-center bg-amber-400"
-        >
-          <div class="flex justify-around" href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="mx-1 h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-
-            All categories
-          </div>
-        </button>
+         
 
         <div class="mx-7 flex gap-8">
           <a
-            class="font-light text-white duration-100 hover:text-yellow-400 hover:underline"
+            class="border-b border-amber-400  font-light text-white duration-100 hover:text-yellow-400"
             href="index.html"
             >Home</a
           >
@@ -325,21 +176,7 @@
           >
         </div>
 
-        <div class="ml-auto flex gap-4 px-5">
-          <a
-            class="font-light text-white duration-100 hover:text-yellow-400 hover:underline"
-            href="login.html"
-            >Login</a
-          >
 
-          <span class="text-white">&#124;</span>
-
-          <a
-            class="font-light text-white duration-100 hover:text-yellow-400 hover:underline"
-            href="sign-up.html"
-            >Sign Up</a
-          >
-        </div>
       </div>
     </nav>
     <!-- /Nav bar -->
@@ -590,7 +427,7 @@
         <p class="pt-3 text-xs lg:w-3/5 lg:pt-5 lg:text-left lg:text-base">
             Explore a vast array of high-quality stationary items for your business needs.
         </p>
-        <button
+        <button onclick="scrollToElement('rec-prod')"
           class="mx-auto mt-5 w-1/2 bg-amber-400 px-3 py-1 text-black duration-100 hover:bg-yellow-300 lg:mx-0 lg:h-10 lg:w-2/12 lg:px-10"
         >
           Get Quotation
@@ -701,19 +538,11 @@
 
     <!-- /Slider  -->
 
-   
- 
-
-    <p class="mx-auto mt-10 mb-5 max-w-[1200px] px-5">RECOMMENDED FOR YOU</p>
+    <livewire:quotation />
 
     <!-- Recommendations -->
-    <section
-      class=" mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 pb-10 lg:grid-cols-4"
-    >
-       @foreach($products as $product)
-        <livewire:product :product="$product" :wire:key="$product->id">
-       @endforeach
-    </section>
+    <livewire:products />
+
     <!-- /Recommendations -->
 
     
@@ -721,7 +550,7 @@
     <!-- Desktop Footer  -->
 
     <footer
-      class="mx-auto w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row"
+      class="mx-auto border-t-2 w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row"
     >
       <div class="ml-5">
         <img
@@ -808,7 +637,7 @@
       <div
         class="mx-auto flex max-w-[1200px] items-center justify-between px-4 pt-2"
       >
-        <p>&copy; Bogdan Bulakh, 2023</p>
+        <p>&copy; StarCity, {{date('Y')}}</p>
         <div class="flex items-center space-x-3">
           <img
             class="h-8"
@@ -830,7 +659,21 @@
     </section>
     <!-- /Payment and copyright  -->
 
+    <livewire:toastComponent />
+
+
     @livewireScripts
+
+    <script>
+        function scrollToElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+
+    
 
   </body>
 </html>

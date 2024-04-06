@@ -3,15 +3,35 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Quotation as QuotationModel;
+use App\Models\QuotationItem;
 
 class Quotation extends Component
 {
 
-    public $count = 0;
+    public $cart = [];
+
+    protected $listeners = ['addToQuote', 'removeQuote'];
+
+    public function mount(){
+        $this->cart = session('cart', []);
+    }
  
-    public function increment()
+    public function addToQuote( $product_id )
     {
-        $this->count++;
+        $cart = session('cart');
+        $cart[ $product_id ] = ['product_id' => $product_id, 'qty' => 1];
+        session(['cart' => $cart ] );  
+        $this->cart = $cart;
+        $this->dispatch('showToast', 'Porduct added');      
+    }
+
+    public function removeQuote( $product_id )
+    {
+        $cart = session('cart');
+        unset( $cart[ $product_id ] );
+        session(['cart' => $cart ] );  
+        $this->cart = $cart;      
     }
  
     public function render()
