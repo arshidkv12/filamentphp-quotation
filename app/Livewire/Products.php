@@ -22,7 +22,13 @@ class Products extends Component
             $products = Product::paginate(50);
         }
         if( !empty( $this->search ) ){
-            $products = Product::where('name', 'like', '%' . $this->search . '%')->paginate(50);
+            $keywords = explode(' ', $this->search );
+            $query = Product::query();
+
+            foreach ($keywords as $keyword) {
+                $query->whereRaw("LOWER(name) LIKE ?", ['%' . strtolower($keyword) . '%']);
+            }
+            $products = $query->paginate(50);        
         }
         return view('livewire.products', ['products' => $products]);
     }
