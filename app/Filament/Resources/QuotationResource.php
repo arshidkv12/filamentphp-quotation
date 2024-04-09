@@ -6,6 +6,7 @@ use App\Filament\Resources\QuotationResource\Pages;
 use App\Filament\Resources\QuotationResource\RelationManagers;
 use App\Models\Quotation;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -29,8 +30,9 @@ class QuotationResource extends Resource
                 TextInput::make('name')->required(),
                 TextInput::make('email')->required(),
                 TextInput::make('phone')->required(),
-                TextInput::make('address_1'),
-                TextInput::make('address_2'),
+                // TextInput::make('address_1'),
+                // TextInput::make('address_2'),
+                Textarea::make('message'),
             ]);
     }
 

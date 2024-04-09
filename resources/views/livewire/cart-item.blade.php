@@ -24,7 +24,8 @@
             min="1"
             wire:change="updateQty"
             wire:model="qty"
-            class="flex text-center  h-8 w-12 cursor-text items-center justify-center border-t border-b active:ring-gray-500"
+            type="number"
+            class="flex text-center  h-8 w-16 cursor-text items-center justify-center border-t border-b active:ring-gray-500"
         />
             
         <button

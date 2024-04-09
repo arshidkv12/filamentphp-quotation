@@ -34,7 +34,7 @@ class QuotationFooter extends Component
         foreach($quoteItems as $item){
             $totalPrice += $item->qty * $item->price;
         }
-        $this->total_price = $totalPrice;
+        $this->total_price = number_format( $totalPrice, 2);
     }
 
     public function render()

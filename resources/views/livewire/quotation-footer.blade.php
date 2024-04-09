@@ -1,8 +1,8 @@
 <div>
     <table>
         <tr>
-            <td>TOTAL QR:</td>
-            <td>{{$total_price}}</td>
+            <td class="font-bold">TOTAL QR:</td>
+            <td class="font-bold">{{$total_price}}</td>
         </tr>
     </table>
 </div>

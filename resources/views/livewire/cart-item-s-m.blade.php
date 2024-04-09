@@ -21,9 +21,10 @@
             </button>
             <input
             min="1"
+            type="number"
             wire:change="updateQty"
             wire:model="qty"
-            class="flex h-8 w-12 text-center cursor-text items-center justify-center border-t border-b active:ring-gray-500"
+            class="flex h-8 w-16 text-center cursor-text items-center justify-center border-t border-b active:ring-gray-500"
             >
             
             <button
