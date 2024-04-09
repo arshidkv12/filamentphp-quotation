@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\Quotation as QuotationModel;
 use App\Models\QuotationItem;
@@ -20,7 +21,14 @@ class Quotation extends Component
     public function addToQuote( $product_id )
     {
         $cart = session('cart');
-        $cart[ $product_id ] = ['product_id' => $product_id, 'qty' => 1];
+        $product = Product::find( $product_id );
+        $cart[ $product_id ] = [
+            'product_id' => $product_id, 
+            'name' => $product->name,
+            'unit' => $product->unit,
+            'image' => $product->image,
+            'qty' => 1
+        ];
         session(['cart' => $cart ] );  
         $this->cart = $cart;
         $this->dispatch('showToast', 'Porduct added');      

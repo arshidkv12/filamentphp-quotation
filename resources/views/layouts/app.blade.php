@@ -169,9 +169,7 @@
     </nav>
     <!-- /Nav bar -->
 
-    <div class="min-h-svh">
     @yield('content')
-    </div>
 
     
     <!-- Desktop Footer  -->
