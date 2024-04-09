@@ -15,7 +15,7 @@
         </div>
         @if( $in_cart )
         <div class="flex justify-center">Product Added!</div>
-        <a href="{{url('/cart')}}"  class="items-center flex justify-center bg-green-500 hover:bg-green-600 mb-5 h-10 w-full bg-violet-900 text-white">
+        <a href="{{url('/cart')}}"  class="items-center flex justify-center bg-green-500 hover:bg-green-600 mb-5 h-10 w-full text-white">
             Go to Quote Page
         </a>
         @else

@@ -6,6 +6,7 @@ use App\Filament\Resources\QuotationResource\Pages;
 use App\Filament\Resources\QuotationResource\RelationManagers;
 use App\Models\Quotation;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -16,6 +17,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Filters\SelectFilter;
+
 
 class QuotationResource extends Resource
 {
@@ -27,6 +30,11 @@ class QuotationResource extends Resource
     {
         return $form
             ->schema([
+                Select::make('order_status')->options([
+                    'Request' => 'Request', 
+                    'Send Quotation' => 'Send Quotation', 
+                    'Completed' => 'Completed'
+                ])->required(),
                 TextInput::make('name')->required(),
                 TextInput::make('email')->required(),
                 TextInput::make('phone')->required(),
@@ -51,9 +59,15 @@ class QuotationResource extends Resource
                 TextColumn::make('name')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('email')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('phone')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
+                TextColumn::make('order_status')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
             ])
-            ->filters([
-                //
+            ->filters([ 
+                SelectFilter::make('order_status')
+                    ->options([
+                        'Request' => 'Request', 
+                        'Send Quotation' => 'Send Quotation', 
+                        'Completed' => 'Completed'
+                    ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

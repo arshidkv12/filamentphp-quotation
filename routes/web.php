@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,4 @@ Route::get('/', function () {
 });
 
 Route::get('/cart', [CartController::class, 'show']);
+Route::get('/contact', [ContactController::class, 'show']);

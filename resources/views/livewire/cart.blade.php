@@ -3,21 +3,36 @@
     <section
         class="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10"
     >
+       
 
         <!-- Mobile cart table  -->
-        @if(empty($quotation_id) && empty( $cart ))
         <section
             class="container justify-center mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden"
         >
+            @if( ! empty( $quotation_id ) )
+                <div class="p-4 mx-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                    <span class="font-medium">Successfully submitted.</span>We will contact you as soon as possible.
+                </div>
+            @endif
+
+            @if(empty($quotation_id) && empty( $cart ))
             <p class="font-bold mx-auto">No products in the list</p>
+            <a href="{{url('/')}}" class="h-12 pt-3 bg-amber-500 text-center hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">
+                Shop More Products
+            </a>
+            @endif
+            
         </section>
-        @else
+        @if( empty($quotation_id) && !empty( $cart ))
         <section
             class="container mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden"
         >
             @foreach($cart as $item)
                 <livewire:cart-item-s-m :item="$item" />
             @endforeach
+            <a href="{{url('/')}}" class="h-12 pt-3 bg-amber-500 text-center hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">
+                Shop More Products
+            </a>
         </section>
         @endif
         <!-- /Mobile cart table  -->

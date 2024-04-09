@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('address_2')->nullable();
             $table->string('message')->nullable();
             $table->string('status')->default('unread');
+            $table->string('order_status', 50)->default('Request')->nullable();
             $table->timestamps();
         });
     }

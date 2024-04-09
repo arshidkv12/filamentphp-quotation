@@ -6,6 +6,7 @@
     ])
 >
     @capture($form)
+
         <x-filament-panels::form
             :wire:key="$this->getId() . '.forms.' . $this->getFormStatePath()"
             wire:submit="save"
