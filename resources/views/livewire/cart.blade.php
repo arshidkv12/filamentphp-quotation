@@ -37,30 +37,40 @@
 
     <section class="mx-auto w-full px-4 md:max-w-[400px]">
         <div class="">
-        <div class="border py-5 px-4 shadow-md">
-            <p class="font-bold">ORDER SUMMARY</p>
-
-            <div class="flex justify-between border-b py-5">
-            <p>Subtotal</p>
-            <p>$1280</p>
-            </div>
-
-            <div class="flex justify-between border-b py-5">
-            <p>Shipping</p>
-            <p>Free</p>
-            </div>
-
-            <div class="flex justify-between py-5">
-            <p>Total</p>
-            <p>$1280</p>
-            </div>
-
-            <a href="checkout-address.html">
-            <button class="w-full bg-violet-900 px-5 py-2 text-white">
-                Proceed to checkout
-            </button>
-            </a>
+        <div class="max-w-md mx-auto">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name">
         </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Email
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Your Email">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Mobile No
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Mobile No">
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                Message
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Your Message"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                Send
+            </button>
+        </div>
+    </form>
+</div>
+
         </div>
     </section>
 </section>

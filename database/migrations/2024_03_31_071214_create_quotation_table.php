@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('address_1')->nullable();
             $table->string('address_2')->nullable();
+            $table->string('message')->nullable();
             $table->string('status')->default('unread');
             $table->timestamps();
         });
