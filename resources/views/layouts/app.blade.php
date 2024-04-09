@@ -20,8 +20,9 @@
     >
       <a href="{{url('/')}}">
         <img
-          class="cursor-pointer sm:h-auto sm:w-auto"
-          src="./assets/images/company-logo.svg"
+          style="width: 150px;"
+          class="cursor-pointer"
+          src="{{url('/images/logo.png')}}"
           alt="Logo"
         />
       </a>
@@ -179,77 +180,55 @@
     >
       <div class="ml-5">
         <img
+          style="width: 150px;"
           class="mt-10 mb-5"
-          src="./assets/images/company-logo.svg"
-          alt="company logo"
+          src="{{ url('/images/logo.png')}}"
+          alt="Logo"
         />
         <p class="pl-0">
-          Lorem ipsum dolor sit amet consectetur <br />
-          adipisicing elit.
+            Wholesale stationary hub
         </p>
         <div class="mt-10 flex gap-3">
-          <a href="https://github.com/bbulakh">
+          <a href="#">
             <img
               class="h-5 w-5 cursor-pointer"
-              src="./assets/images/github.svg"
+              src="{{ url('/images/github.svg') }}"
               alt="github icon"
             />
           </a>
-          <a href="https://t.me/b_bulakh">
+          <a href="#">
             <img
               class="h-5 w-5 cursor-pointer"
-              src="./assets/images/telegram.svg"
+              src="{{ url('/images/telegram.svg')}}"
               alt="telegram icon"
             />
           </a>
-          <a href="https://www.linkedin.com/in/bogdan-bulakh-393284190/">
+          <a href="#">
             <img
               class="h-5 w-5 cursor-pointer"
-              src="./assets/images/linkedin.svg"
+              src="{{ url('/images/linkedin.svg') }}"
               alt="twitter icon"
             />
           </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 gap-1">
         <div class="mx-5 mt-10">
-          <p class="font-medium text-gray-500">FEATURES</p>
+          <p class="font-medium text-gray-500">ADDRESS</p>
           <ul class="text-sm leading-8">
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Commerce</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Merchendise</a></li>
+            <p>Star City</p>
+            <p>Doha, Qatar</p>
+            <p>CR. No: 197250</p>
           </ul>
         </div>
 
         <div class="mx-5 mt-10">
           <p class="font-medium text-gray-500">SUPPORT</p>
           <ul class="text-sm leading-8">
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Audition</a></li>
-            <li><a href="#">Art Status</a></li>
-          </ul>
-        </div>
-
-        <div class="mx-5 mt-10">
-          <p class="font-medium text-gray-500">DOCUMENTS</p>
-          <ul class="text-sm leading-8">
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Conditions</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">License</a></li>
-          </ul>
-        </div>
-
-        <div class="mx-5 mt-10">
-          <p class="font-medium text-gray-500">DELIVERY</p>
-          <ul class="text-sm leading-8">
-            <li><a href="#">List of countries</a></li>
-            <li><a href="#">Special information</a></li>
-            <li><a href="#">Restrictions</a></li>
-            <li><a href="#">Payment</a></li>
+            <li><a href="mailto:Starcityqa@gmail.com">Starcityqa@gmail.com</a></li>
+            <li><a href="tel:+97430093821">+974 3009 3821</a></li>
+            <li><a href="tel:+97466193214">+974 6619 3214</a></li>
           </ul>
         </div>
       </div>
