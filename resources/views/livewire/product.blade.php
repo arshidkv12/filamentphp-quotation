@@ -14,11 +14,12 @@
             {!!$product->description!!}
         </div>
         @if( $in_cart )
-        <button  class="bg-green-500 hover:bg-green-600 my-5 h-10 w-full bg-violet-900 text-white">
+        <div class="flex justify-center">Product Added!</div>
+        <a href="{{url('/cart')}}"  class="items-center flex justify-center bg-green-500 hover:bg-green-600 mb-5 h-10 w-full bg-violet-900 text-white">
             Go to Quote Page
-        </button>
+        </a>
         @else
-        <button wire:click="addToQuote({{ $product->id }})" class="my-5 h-10 w-full bg-violet-900 text-white">
+        <button wire:click="addToQuote({{ $product->id }})" class="my-5 mt-6 h-10 w-full bg-violet-900 text-white">
             Get Quotation
         </button>
         @endif
