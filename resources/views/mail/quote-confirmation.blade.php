@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmed</title>
+    <title>Quote Request Confirmation</title>
 </head>
 <body style="font-family: Arial, sans-serif;">
 
     <table cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: auto; border-collapse: collapse;">
         <tr>
-            <td style="padding: 20px; background-color: #f0f0f0; text-align: center;">
-                <h2 style="margin-bottom: 0;">Order Confirmed</h2>
-                <p style="margin-top: 5px;">Thank you for your order! Your order has been confirmed.</p>
+            <td style="padding: 20px; background-color: #f0f0f0; text-align: left;">
+                <h2 style="margin-bottom: 5px;">Quote Request Confirmation</h2>
+                <p style="margin-top: 5px;">Thank you for requesting a quote. We have received your request and our team will review it shortly.</p>
+                <p style="margin-top: 10px;">Name: {{$quote->name}}</p>
+                <p style="margin-top: 5px;">Email: {{$quote->email}}</p>
+                <p style="margin-top: 5px;">Mob: {{$quote->phone}}</p>
+                <p style="margin-top: 5px;">Message: {{$quote->message}}</p>
             </td>
         </tr>
         <tr>
@@ -22,16 +26,15 @@
                         <tr>
                             <th style="border: 1px solid #ccc; padding: 10px;">Product</th>
                             <th style="border: 1px solid #ccc; padding: 10px;">Quantity</th>
-                            <th style="border: 1px solid #ccc; padding: 10px;">Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Loop through order items here -->
+                    @foreach($quote_items as $item)
                         <tr>
-                            <td style="border: 1px solid #ccc; padding: 10px;">Product Name</td>
-                            <td style="border: 1px solid #ccc; padding: 10px;">2</td>
-                            <td style="border: 1px solid #ccc; padding: 10px;">$20.00</td>
+                            <td style="border: 1px solid #ccc; padding: 10px;">{{$item->name}}</td>
+                            <td style="border: 1px solid #ccc; padding: 10px;">{{$item->qty}}</td>
                         </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </td>

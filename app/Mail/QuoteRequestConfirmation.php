@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Quotation;
+use App\Models\QuotationItem;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,12 +15,15 @@ class QuoteRequestConfirmation extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $quote_items = [];
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct( public Quotation $quote,
+    )
     {
-        //
+        $this->quote_items = QuotationItem::where('quotation_id', $quote->id)->get();
     }
 
     /**

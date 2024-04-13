@@ -9,7 +9,7 @@
 
     <table cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: auto; border-collapse: collapse;">
         <tr>
-            <td style="padding: 20px; background-color: #f0f0f0; text-align: center;">
+            <td style="padding: 20px; background-color: #f0f0f0; text-align: left;">
                 <h2 style="margin-bottom: 0;">Quote Request Is Received</h2>
                 <p style="margin-top: 5px;">Name: {{$quote->name}}</p>
                 <p style="margin-top: 5px;">Email: {{$quote->email}}</p>
