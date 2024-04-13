@@ -16,7 +16,7 @@ class Cart extends Component
     public $message;
     public $quotation_id;
 
-    protected $listeners = ['cartUpdated'];
+    protected $listeners = ['cartUpdated' => 'cartUpdated'];
 
 
     public function mount(){
@@ -24,7 +24,7 @@ class Cart extends Component
     }
     
     public function cartUpdated(){
-        $this->cart = session('cart', []);
+         $this->cart = session('cart', []);
     }
 
     public function submit(){

@@ -37,7 +37,7 @@ class CartItem extends Component
         $cart = session('cart', []);
         unset( $cart[ $this->product_id ]);
         session(['cart' => $cart]);
-        // $this->dispatch('cartUpdated');
+        $this->dispatch('cartUpdated');
     }
 
     public function render()

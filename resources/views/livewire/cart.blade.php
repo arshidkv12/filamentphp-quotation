@@ -4,7 +4,6 @@
         class="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10"
     >
        
-
         <!-- Mobile cart table  -->
         <section
             class="container justify-center mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden"
@@ -28,7 +27,7 @@
             class="container mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden"
         >
             @foreach($cart as $item)
-                <livewire:cart-item-s-m :item="$item" />
+                <livewire:cart-item-s-m :item="$item" wire:key="item-{{$item['product_id']}}"/>
             @endforeach
             <a href="{{url('/')}}" class="h-12 pt-3 bg-amber-500 text-center hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">
                 Shop More Products
@@ -60,7 +59,7 @@
             </thead>
             <tbody>
             @foreach($cart as $item)
-                <livewire:cart-item :item="$item" />
+                <livewire:cart-item :item="$item" wire:key="item-{{$item['product_id']}}"/>
             @endforeach
             </tbody>
             </table>
@@ -95,7 +94,7 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                             Mobile No
                         </label>
-                        <input required wire:model="phone" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="tel" placeholder="Mobile No">
+                        <input required wire:model="phone" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tel" type="tel" placeholder="Mobile No">
                     </div>
                     <div class="mb-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
