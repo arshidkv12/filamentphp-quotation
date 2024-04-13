@@ -10,7 +10,8 @@
     </div>
 
     <div>
-        <p class="mt-2 max-md:min-h-12">{{$product->name}}</p>
+        <p class="mt-2 max-md:min-h-12 font-medium">{{$product->name}}</p>
+        <p class="mt-2 text-sm">Unit : {{$product->unit}}</p>
 
         <div class="mt-2 text-sm min-h-20">
             {!!$product->description!!}

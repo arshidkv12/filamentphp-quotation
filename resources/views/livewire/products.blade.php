@@ -1,7 +1,7 @@
 <div>
     
     <div class="my-5 px-5 flex justify-center w-full">
-        <form action="#" class="h-9 w-full md:w-2/5  items-center border flex">
+        <form action="#" class="h-9 w-full md:w-2/5  items-center border border-green-700 flex">
             <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -18,13 +18,13 @@
             </svg>
 
             <input
-            class="hidden w-11/12 outline-none md:block"
-            type="search"
-            wire:model.live="search"
-            placeholder="Search"
+                class="hidden w-11/12 outline-none md:block"
+                type="search"
+                wire:model.live="search"
+                placeholder="Search"
             />
 
-            <button disabled class="ml-auto h-full bg-amber-400 px-4 hover:bg-yellow-300">
+            <button disabled class="ml-auto h-full bg-green-700 px-4 hover:bg-green-900 text-white">
             Search
             </button>
         </form>

@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Mail\QuoteRequest;
 use App\Models\Quotation;
 use App\Models\QuotationItem;
 use Livewire\Component;
+use Illuminate\Support\Facades\Mail;
 
 class Cart extends Component
 {
@@ -29,6 +31,7 @@ class Cart extends Component
 
     public function submit(){
         
+        
         $quote = New Quotation;
         $quote->name = $this->name;
         $quote->email = $this->email;
@@ -51,6 +54,11 @@ class Cart extends Component
         $this->cart = [];
         $this->reset();
         $this->quotation_id = $quote->id;
+
+        $admin_email = config('mail.admin_email');
+        Mail::to( $admin_email )->send(new QuoteRequest( $quote ));
+
+
     }
 
     public function render()
