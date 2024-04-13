@@ -1,11 +1,13 @@
 <tr class="h-[100px] border-b">
     <td class="align-middle">
         <div class="flex">
-        <img
-            class="w-[90px]"
-            src="{{empty($item['image']) ? url('placeholder.png') : Storage::url($item['image'])}}"
-            alt="{{$item['name']}}"
-        />
+       
+        <div class="flex gap-1.5">
+            <img src="{{empty($item['image']) ? url('placeholder.png') : Storage::url($item['image'])}}"
+                style="height: 2.5rem;" class="max-w-none object-cover object-center ring-white dark:ring-gray-900"
+            />
+        </div>
+
         <div class="ml-3 flex flex-col justify-center">
             <p class="text-md">{{$item['name']}}</p>
             <p class="text-sm text-gray-400">Unit: {{$item['unit']}}</p>

@@ -1,10 +1,12 @@
 <div class="flex flex-col">
-    <div class="relative flex border">
-        <img
-            class=""
-            src="{{ $image }}"
-            alt="{{$product->name}}"
-        />
+    <div class="justify-center items-center relative flex border">
+        <div class="w-52 h-52 relative overflow-hidden">
+            <img
+                class="absolute inset-0 w-full h-full object-contain"
+                src="{{ $image }}"
+                alt="{{$product->name}}"
+            />
+        </div>
     </div>
 
     <div>

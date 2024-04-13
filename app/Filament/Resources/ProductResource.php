@@ -40,7 +40,9 @@ class ProductResource extends Resource
                         'Nos' => 'Nos',
                         'Pcs' => 'Pcs',
                     ])->required(),
-                FileUpload::make('image')->storeFileNamesIn('attachment_file_names'),
+                FileUpload::make('image')
+                    ->storeFileNamesIn('attachment_file_names')
+                    ->imageEditor(),
                 RichEditor::make('description')
         ]);
     }
@@ -59,6 +61,7 @@ class ProductResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
