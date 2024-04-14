@@ -22,6 +22,7 @@
             </button>
             <input
             wire:model="qty"
+            x-model="count"
             min="1"
             wire:change="updateQty"
             type="number"
