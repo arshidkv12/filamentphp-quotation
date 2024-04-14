@@ -21,8 +21,9 @@ class CartItem extends Component
         $cart[ $this->product_id ] = $this->item;
         session(['cart' => $cart]);
     }
+    
 
-    public function increment(){
+    public function increment(){  
         $this->qty = $this->qty + 1;
         $this->updateQty();
     }
@@ -33,7 +34,7 @@ class CartItem extends Component
         $this->updateQty();
     }
 
-    public function removeItem(){
+    public function removeItem(){  
         $cart = session('cart', []);
         unset( $cart[ $this->product_id ]);
         session(['cart' => $cart]);

@@ -1,4 +1,4 @@
-<div>
+<div key='product-search'>
     
     <div class="my-5 px-5 flex justify-center w-full">
         <form action="#" class="h-9 w-full md:w-2/5  items-center border border-green-700 flex">
@@ -18,7 +18,7 @@
             </svg>
 
             <input
-                class="hidden w-11/12 outline-none md:block"
+                class="w-11/12 outline-none md:block"
                 type="search"
                 wire:model.live="search"
                 placeholder="Search"

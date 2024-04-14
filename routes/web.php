@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InvoiceController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
+});
+
 Route::get('/cart', [CartController::class, 'show']);
 Route::get('/contact', [ContactController::class, 'show']);
 Route::get('/invoice/{quotation}', [InvoiceController::class, 'show']);
+
+Route::get('clear_cache', function () {
+
+    Artisan::call('optimize:clear');
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    
+    Artisan::call('config:cache');
+    Artisan::call('route:cache');
+    Artisan::call('view:cache');
+    Artisan::call('optimize');
+
+    dd("Cache is cleared");
+
+});

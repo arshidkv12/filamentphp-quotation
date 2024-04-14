@@ -1,4 +1,4 @@
-<tr class="h-[100px] border-b">
+<tr x-data="{ open: true }" x-show="open" class="h-[100px] border-b">
     <td class="align-middle">
         <div class="flex">
        
@@ -14,23 +14,25 @@
         </div>
         </div>
     </td>
-    <td class="align-middle">
+    <td class="align-middle" x-data="{ count: $wire.qty }">
         <div class="flex items-center justify-center">
         <button
             wire:click="decriment"
+            x-on:click="count = count > 0 ? count-1 : count"
             class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
         >
             &minus;
         </button>
         <input 
+            wire:model="qty"
             min="1"
             wire:change="updateQty"
-            wire:model="qty"
             type="number"
-            class="flex text-center  h-8 w-16 cursor-text items-center justify-center border-t border-b active:ring-gray-500"
+            class="flex text-center h-8 w-16 cursor-text items-center justify-center border-t border-b active:ring-gray-500"
         />
             
         <button
+            x-on:click="count++"
             wire:click="increment"
             class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
         >
@@ -39,7 +41,7 @@
         </div>
     </td>
     <td class="align-middle">
-        <svg wire:click="removeItem"
+        <svg x-on:click="open = ! open" wire:click="removeItem"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"

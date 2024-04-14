@@ -1,5 +1,5 @@
-<div class="flex flex-col">
-    <div class="justify-center items-center relative flex border">
+<div class="flex flex-col border px-4">
+    <div class="justify-center items-center relative flex">
         <div class="w-52 h-52 relative overflow-hidden">
             <img
                 class="absolute inset-0 w-full h-full object-contain"
@@ -13,7 +13,7 @@
         <p class="mt-2 max-md:min-h-12 font-medium">{{$product->name}}</p>
         <p class="mt-2 text-sm">Unit : {{$product->unit}}</p>
 
-        <div class="mt-2 text-sm min-h-20">
+        <div class="mt-2 text-sm md:min-h-20">
             {!!$product->description!!}
         </div>
         @if( $in_cart )

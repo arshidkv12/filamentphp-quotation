@@ -1,4 +1,4 @@
-<div class="flex w-full border px-4 py-4">
+<div x-data="{ open: true }" x-show="open" class="flex w-full border px-4 py-4">
     <img
         class="self-start object-contain"
         width="90px"
@@ -12,22 +12,24 @@
         </div>
         <p class="text-sm text-gray-400">Unit: {{$item['unit']}}</p>
         <div class="mt-2 flex w-full items-center justify-between">
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center" x-data="{ count: $wire.qty }">
             <button
+            x-on:click="count = count > 0 ? count-1 : count"
             wire:click="decriment"
             class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
             >
             &minus;
             </button>
             <input
-            min="1"
-            type="number"
-            wire:change="updateQty"
             wire:model="qty"
+            min="1"
+            wire:change="updateQty"
+            type="number"
             class="flex h-8 w-16 text-center cursor-text items-center justify-center border-t border-b active:ring-gray-500"
             >
             
             <button
+            x-on:click="count++"
             wire:click="increment"
             class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
             >
@@ -36,7 +38,7 @@
         </div>
 
         <svg
-            wire:click="removeItem"
+            x-on:click="open = ! open" wire:click="removeItem"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"

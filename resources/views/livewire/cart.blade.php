@@ -27,7 +27,7 @@
             class="container mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden"
         >
             @foreach($cart as $item)
-                <livewire:cart-item-s-m :item="$item" wire:key="item-{{$item['product_id']}}"/>
+                <livewire:cart-item-s-m :item="$item" wire:key="sm-item-{{$item['product_id']}}"/>
             @endforeach
             <a href="{{url('/')}}" class="h-12 pt-3 bg-amber-500 text-center hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">
                 Shop More Products
