@@ -47,8 +47,9 @@
                 <div class="flex items-center">
                 
                 </div>
-                <button class="my-3 bg-amber-400 px-4 py-2 lg:my-0">
-                Send Message
+                <button wire:loading.attr="disabled" class="my-3 bg-amber-400 px-4 py-2 lg:my-0">
+                    Send Message
+                    <svg wire:loading class="fill-current inline" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle class="spinner_S1WN" cx="4" cy="12" r="3"/><circle class="spinner_S1WN spinner_Km9P" cx="12" cy="12" r="3"/><circle class="spinner_S1WN spinner_JApP" cx="20" cy="12" r="3"/></svg>
                 </button>
             </div>
             </form>
