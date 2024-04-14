@@ -18,6 +18,7 @@ class Cart extends Component
     public $phone;
     public $message;
     public $quotation_id;
+    public $company;
 
     protected $listeners = ['cartUpdated' => 'cartUpdated'];
 
@@ -38,6 +39,7 @@ class Cart extends Component
         $quote->email = $this->email;
         $quote->phone = $this->phone;
         $quote->message = $this->message;
+        $quote->company = $this->company;
         $quote->status = 'unread';
         $quote->save();
 

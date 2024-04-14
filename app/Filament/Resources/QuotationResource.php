@@ -36,6 +36,7 @@ class QuotationResource extends Resource
                     'Completed' => 'Completed'
                 ])->required(),
                 TextInput::make('name')->required(),
+                TextInput::make('company'),
                 TextInput::make('email')->required(),
                 TextInput::make('phone')->required(),
                 // TextInput::make('address_1'),
@@ -57,6 +58,7 @@ class QuotationResource extends Resource
             ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('name')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
+                TextColumn::make('company')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('email')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('phone')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('order_status')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),

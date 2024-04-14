@@ -80,19 +80,25 @@
                 <form wire:submit.prevent="submit" class="bg-white border rounded px-8 pt-6 pb-8 mb-4">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                            Name
+                            Name*
                         </label>
                         <input required wire:model="name" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name">
                     </div>
                     <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                            Company Name
+                        </label>
+                        <input wire:model="company" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Company Name">
+                    </div>
+                    <div class="mb-4">
                         <label  class="block text-gray-700 text-sm font-bold mb-2" for="email">
-                            Email
+                            Email*
                         </label>
                         <input required wire:model="email" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your Email">
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-                            Mobile No
+                            Mobile No*
                         </label>
                         <input required wire:model="phone" class="border appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tel" type="tel" placeholder="Mobile No">
                     </div>

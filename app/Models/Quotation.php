@@ -16,6 +16,7 @@ class Quotation extends Model
         'phone',
         'address_1',
         'address_2',
+        'company'
     ];
     public function quotationItems(): HasMany { 
         return $this->hasMany( QuotationItem::class );

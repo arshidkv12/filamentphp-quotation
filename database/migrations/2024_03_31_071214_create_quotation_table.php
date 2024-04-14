@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('company')->nullable();
             $table->string('phone');
             $table->string('email');
             $table->string('address_1')->nullable();
