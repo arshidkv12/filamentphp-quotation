@@ -9,15 +9,15 @@ class QuotationFooter extends Component
 {
 
     public $total_price = 0;
-    public $quotationId;
+    public $quotation;
 
     protected $listeners = [ 'quoteUpdated' => 'quoteUpdated' ];
 
-    public function mount($quotationId)
+    public function mount($quotation)
     {
-        $this->quotationId = $quotationId;
+        $this->quotation = $quotation;
 
-        $quoteItems = QuotationItem::where('quotation_id', $this->quotationId )->get();
+        $quoteItems = QuotationItem::where('quotation_id', $this->quotation->id )->get();
 
         $totalPrice = 0;
         foreach($quoteItems as $item){
@@ -28,7 +28,7 @@ class QuotationFooter extends Component
 
     public function quoteUpdated()
     {
-        $quoteItems = QuotationItem::where('quotation_id', $this->quotationId )->get();
+        $quoteItems = QuotationItem::where('quotation_id', $this->quotation->id )->get();
 
         $totalPrice = 0;
         foreach($quoteItems as $item){

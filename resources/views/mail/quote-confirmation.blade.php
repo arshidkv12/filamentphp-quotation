@@ -13,6 +13,7 @@
                 <h2 style="margin-bottom: 5px;">Quote Request Confirmation</h2>
                 <p style="margin-top: 5px;">Thank you for requesting a quote. We have received your request and our team will review it shortly.</p>
                 <p style="margin-top: 10px;">Name: {{$quote->name}}</p>
+                <p style="margin-top: 5px;">Company: {{$quote->company}}</p>
                 <p style="margin-top: 5px;">Email: {{$quote->email}}</p>
                 <p style="margin-top: 5px;">Mob: {{$quote->phone}}</p>
                 <p style="margin-top: 5px;">Message: {{$quote->message}}</p>
@@ -25,6 +26,7 @@
                     <thead>
                         <tr>
                             <th style="border: 1px solid #ccc; padding: 10px;">Product</th>
+                            <th style="border: 1px solid #ccc; padding: 10px;">Unit</th>
                             <th style="border: 1px solid #ccc; padding: 10px;">Quantity</th>
                         </tr>
                     </thead>
@@ -32,6 +34,7 @@
                     @foreach($quote_items as $item)
                         <tr>
                             <td style="border: 1px solid #ccc; padding: 10px;">{{$item->name}}</td>
+                            <td style="border: 1px solid #ccc; padding: 10px;">{{$item->product->unit}}</td>
                             <td style="border: 1px solid #ccc; padding: 10px;">{{$item->qty}}</td>
                         </tr>
                     @endforeach

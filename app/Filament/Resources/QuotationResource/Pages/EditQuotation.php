@@ -12,6 +12,13 @@ class EditQuotation extends EditRecord
 
     protected static string $view = 'filament.edit-quotation';
 
+    protected $listeners = [ 'refresh' => 'refreshForm' ];
+
+    public function refreshForm()
+    {
+        $this->fillForm();
+    }
+    
     public function getTitle(): string 
     {
         $this->record->status = 'read';

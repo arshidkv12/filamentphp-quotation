@@ -32,9 +32,9 @@ class QuotationResource extends Resource
             ->schema([
                 Select::make('order_status')->options([
                     'Request' => 'Request', 
-                    'Send Quotation' => 'Send Quotation', 
+                    'Sent Quotation' => 'Sent Quotation', 
                     'Completed' => 'Completed'
-                ])->required(),
+                ])->required()->label('Status'),
                 TextInput::make('name')->required(),
                 TextInput::make('company'),
                 TextInput::make('email')->required(),
@@ -61,13 +61,13 @@ class QuotationResource extends Resource
                 TextColumn::make('company')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('email')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
                 TextColumn::make('phone')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
-                TextColumn::make('order_status')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
+                TextColumn::make('order_status')->label('Status')->weight(fn($record)=> $record->status =='unread' ? 'bold' : ''),
             ])
             ->filters([ 
                 SelectFilter::make('order_status')
                     ->options([
                         'Request' => 'Request', 
-                        'Send Quotation' => 'Send Quotation', 
+                        'Sent Quotation' => 'Sent Quotation', 
                         'Completed' => 'Completed'
                     ])
             ])

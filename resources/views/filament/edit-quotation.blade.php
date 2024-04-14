@@ -46,6 +46,6 @@
         </x-filament-panels::resources.relation-managers>
     @endif
     <x-filament-panels::page.unsaved-data-changes-alert />
-    <livewire:quotation-footer :quotationId="$this->getRecord()->id" />
+    <livewire:quotation-footer :quotation="$this->getRecord()" />
 
 </x-filament-panels::page>

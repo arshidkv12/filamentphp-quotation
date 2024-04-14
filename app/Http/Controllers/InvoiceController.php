@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Quotation;
 use App\Models\QuotationItem;
-use Illuminate\Http\Request;
 use LaravelDaily\Invoices\Invoice;
-use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Classes\Party;
-use LaravelDaily\Invoices\Classes\Seller;
 
 class InvoiceController extends Controller
 {
@@ -56,6 +53,51 @@ class InvoiceController extends Controller
             ->addItems($itemList);
         
         return $invoice->stream();
+    }
+
+
+    public static function save(Quotation $quotation) {
+        
+        $customer = new Party([
+            'name'          => $quotation->name,
+            'company'       => $quotation->company,
+            'email'         => $quotation->email,
+            'phone'         => $quotation->phone,
+        ]);
+        
+        $seller = new Party([
+            'name'          => 'StarCity',
+            'phone'         => '+974 3009 3821',
+            'address'       => 'PO box No; 16772',
+            'address_1'     => 'DOHA, QATAR',
+            'email'         => 'Starcityqa@gmail.com',
+        ]);
+        
+        $items = QuotationItem::where('quotation_id', $quotation->id )->get();
+        foreach( $items as $item){
+            if(  $item->price <= 0){
+                return [ 'error' => 'Add price' ];
+            }
+            $itemList[] = InvoiceItem::make( $item->name )
+                            ->quantity( $item->qty )
+                            ->units( $item->product->unit )
+                            ->pricePerUnit( $item->price ?? 0 );
+        }
+        
+        $invoice = Invoice::make()
+            ->seller($seller)
+            ->buyer($customer)
+            ->currencySymbol('QAR')
+            ->currencyCode('QAR')
+            ->currencyFraction('QAR')
+            ->logo(public_path('images/logo.png'))
+            ->serialNumberFormat('{SEQUENCE}')
+            ->dateFormat('d/m/Y')
+            ->filename('quote-'.$quotation->id)
+            ->addItems($itemList);
+        
+        $invoice->save('public');
+        return true;
     }
 
 
