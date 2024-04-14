@@ -33,7 +33,6 @@ class Cart extends Component
 
     public function submit(){
         
-        
         $quote = New Quotation;
         $quote->name = $this->name;
         $quote->email = $this->email;

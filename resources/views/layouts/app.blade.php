@@ -11,6 +11,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     @livewireStyles
 
+    <style>.spinner_S1WN{animation:spinner_MGfb .8s linear infinite;animation-delay:-.8s}.spinner_Km9P{animation-delay:-.65s}.spinner_JApP{animation-delay:-.5s}@keyframes spinner_MGfb{93.75%,100%{opacity:.2}}</style>
+
+
   </head>
 
   <body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false}">

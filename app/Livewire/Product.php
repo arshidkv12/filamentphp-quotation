@@ -24,7 +24,7 @@ class Product extends Component
     }
 
 
-    public function addToQuote( $product_id ){
+    public function addToQuote( $product_id ){  
         $this->in_cart = true;
         $this->dispatch('addToQuote', $product_id);
     }
