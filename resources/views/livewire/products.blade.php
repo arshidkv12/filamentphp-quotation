@@ -25,7 +25,8 @@
             />
 
             <button disabled class="ml-auto h-full bg-green-700 px-4 hover:bg-green-900 text-white">
-            Search
+                <span wire:loading.remove>Search</span>
+                <svg wire:loading class="fill-current" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle class="spinner_S1WN" cx="4" cy="12" r="3"/><circle class="spinner_S1WN spinner_Km9P" cx="12" cy="12" r="3"/><circle class="spinner_S1WN spinner_JApP" cx="20" cy="12" r="3"/></svg>
             </button>
         </form>
     </div>

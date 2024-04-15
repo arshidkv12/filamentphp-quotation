@@ -14,10 +14,10 @@
       <div
         class="absolute top-1/2 left-1/2 mx-auto flex w-11/12 max-w-[1200px] -translate-x-1/2 -translate-y-1/2 flex-col text-center text-white lg:ml-5"
       >
-        <h1 class="text-4xl font-bold sm:text-5xl lg:text-left">
+        <h1 class="text-2xl font-bold sm:text-5xl lg:text-left">
             Welcome to our wholesale stationary hub!
         </h1>
-        <p class="pt-3 text-xs lg:w-3/5 lg:pt-5 lg:text-left lg:text-base">
+        <p class="pt-3 text-sm lg:w-3/5 lg:pt-5 lg:text-left lg:text-base">
             Explore a vast array of high-quality stationary items for your business needs.
         </p>
         <button onclick="scrollToElement('rec-prod')"
