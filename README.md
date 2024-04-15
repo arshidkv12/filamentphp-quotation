@@ -8,7 +8,6 @@
 
 <img src="https://github.com/arshidkv12/filamentphp-quotation/blob/main/public/images/screenshot.png?raw=true" alt="project-screenshot" width="400" height="400/">
 
-<img src="https://github.com/arshidkv12/filamentphp-quotation/blob/main/public/images/screenshot-2.png?raw=true" alt="project-screenshot" width="400" height="400/">
 
   
   
