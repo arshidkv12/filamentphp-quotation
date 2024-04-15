@@ -1,10 +1,14 @@
 <h1 align="center" id="title">Laravel Filamentphp Quotation System</h1>
 
+<p align="center"><img src="https://socialify.git.ci/arshidkv12/filamentphp-quotation/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+
 <p id="description">Welcome to the Laravel FilamentPHP Quotation System! This application is designed to provide a streamlined and efficient solution for managing quotations.</p>
 
 <h2>Project Screenshots:</h2>
 
 <img src="https://github.com/arshidkv12/filamentphp-quotation/blob/main/public/images/screenshot.png?raw=true" alt="project-screenshot" width="400" height="400/">
+
+<img src="https://github.com/arshidkv12/filamentphp-quotation/blob/main/public/images/screenshot-2.png?raw=true" alt="project-screenshot" width="400" height="400/">
 
   
   
