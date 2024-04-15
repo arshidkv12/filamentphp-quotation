@@ -32,3 +32,51 @@ git clone https://github.com/arshidkv12/filamentphp-quotation.git
 ```
 composer install
 ```
+
+<p>3. Setting .env Variables</p>
+
+```
+cp .env.example .env
+```
+
+<p>4. Generate Key</p>
+
+```
+php artisan key:generate
+```
+
+<p>5. Migrate DB</p>
+
+```
+php artisan migrate
+```
+
+<p>6. Create an administrator account</p>
+
+```
+php artisan make:filament-user
+```
+
+```
+php artisan storage:link
+```
+
+```
+php artisan serve
+```
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   php
+*   laravel
+*   filament
+*   livewire
+*   tailwindcss
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the MIT
