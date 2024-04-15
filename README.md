@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Laravel Filamentphp Quotation System</h1>
 
-<p id="description">Laravel Filamentphp Quotation System</p>
+<p id="description">Welcome to the Laravel FilamentPHP Quotation System! This application is designed to provide a streamlined and efficient solution for managing quotations.</p>
 
 <h2>Project Screenshots:</h2>
 
@@ -64,6 +64,10 @@ php artisan storage:link
 ```
 php artisan serve
 ```
+
+<h2>🍰 Contribution Guidelines:</h2>
+
+Contributions are welcome! If you find any issues or have suggestions for improvements please open an issue or submit a pull request.
 
   
   
